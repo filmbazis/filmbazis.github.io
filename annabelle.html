@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annabelle - FilmBázis</title>
+    <link rel="stylesheet" href="./Annabelle/style.css">
+    <link rel="shortcut icon" href="./Annabelle/icon2.png" type="image/x-icon">
+    <script src="./Annabelle/solid.js"></script>
+    <script>
+      document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+    <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>Annabelle</header>
+    <input type="radio" name="slider" checked id="home">
+    <input type="radio" name="slider" id="blog">
+    <input type="radio" name="slider" id="code">
+    <input type="radio" name="slider" id="help">
+    <input type="radio" name="slider" id="about">
+    <nav>
+      <label for="home" class="home">Adatok</label>
+      <label for="blog" class="blog">Letöltés</label>
+      <label for="code" class="code">Segítség</label>
+      <label for="help" class="help">Rólunk</label>
+      <label for="about" class="about">Információ</label>
+      <div class="slider"></div>
+    </nav>
+    <section>
+      <div class="content content-1">
+        <div class="title">Filmről</div>
+        <p class="details">A Démonok között a tavalyi év egyik legkülönlegesebb és legfélelmetesebb filmje volt, ám az igazságnak csupán egy részét beszélte el. A lényeg kimaradt: ez a film Annabelle eredetéről beszél. A különleges babát nem a filmesek találták ki: jelenleg is vitrinbe zárva látható egy okkult múzeumban: a terembe, ahol kiállították, ritkán mer bárki bemenni, csupán egy lelkész jár be hozzá, hogy havonta kétszer megáldja.</p>
+         <div class="description">
+           <p>Értékelés</p>
+         </div>
+         <div class="description01">
+          <p>5.4/¹⁰</p>
+        </div>
+         <div>
+          <button class="button button1">Előzetes Lejátszása</button>
+          <div id="light">
+            <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+            <video id="video-id"><source src="./Annabelle/Video/anabelle.mp4" type="video/mp4" />
+              <script>
+                  var myFP = fluidPlayer(
+                      'video-id',	{
+                "layoutControls": {
+                  "controlBar": {
+                    "autoHideTimeout": 3,
+                    "animated": true,
+                    "autoHide": true
+                  },
+                  "htmlOnPauseBlock": {
+                    "html": null,
+                    "height": null,
+                    "width": null
+                  },
+                  "autoPlay": false,
+                  "mute": false,
+                  "allowTheatre": true,
+                  "playPauseAnimation": true,
+                  "playbackRateEnabled": true,
+                  "allowDownload": false,
+                  "playButtonShowing": false,
+                  "fillToContainer": true,
+                  "primaryColor": "#117b8b",
+                  "posterImage": "./Annabelle/images/thumbnail.jpg"
+                },
+                "vastOptions": {
+                  "adList": [],
+                  "adCTAText": false,
+                  "adCTATextPosition": ""
+                }
+              });
+              </script>
+          </div>
+          <div id="fade" onClick="lightbox_close();"></div>
+          <style>
+          #fade {
+            display: none;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1001;
+            -moz-opacity: 0.8;
+            opacity: .80;
+            filter: alpha(opacity=80);
+          }
+          
+          #light {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            max-width: 600px;
+            max-height: 360px;
+            margin-left: -300px;
+            margin-top: -180px;
+            border: 2px solid #FFF;
+            background: #FFF;
+            z-index: 1002;
+            overflow: visible;
+          }
+          
+          #boxclose {
+            float: right;
+            cursor: pointer;
+            color: #fff;
+            border: 1px solid #AEAEAE;
+            border-radius: 3px;
+            background: #222222;
+            font-size: 31px;
+            font-weight: bold;
+            display: inline-block;
+            line-height: 0px;
+            padding: 11px 3px;
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            z-index: 1002;
+            opacity: 0.9;
+          }
+          
+          .boxclose:before {
+            content: "×";
+          }
+          
+          #fade:hover ~ #boxclose {
+            display:none;
+          }
+          
+          .test:hover ~ .test2 {
+            display: none;
+          }
+          </style>
+          <script>
+          window.document.onkeydown = function(e) {
+            if (!e) {
+              e = event;
+            }
+            if (e.keyCode == 27) {
+              lightbox_close();
+            }
+          }
+          
+          function lightbox_open() {
+            var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+            window.scrollTo(0, 0);
+            document.getElementById('light').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+            lightBoxVideo.play();
+          }
+          
+          function lightbox_close() {
+            var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+            document.getElementById('light').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+            lightBoxVideo.pause();
+          }
+          </script>
+          <button href="#" onclick="lightbox_open();" class="button button2">Lejátszás</button>
+        </div>
+      </div>
+      <div class="content content-2">
+        <div class="title">Szolgáltatók</div>
+        <a href="#" onclick="window.location.href='https://github.com/filmhegy/filmhegy.github.io/releases/download/felirat/Annabelle.2014.HU.Felirat.srt';" style="text-decoration:none" class="hide1">MEGA</a>
+        <div>
+        <a href="#" onclick="window.location.href='https://github.com/filmhegy/filmhegy.github.io/releases/download/felirat/Annabelle.2014.HU.Felirat.srt';" style="text-decoration:none" class="hide1">
+        AnonFiles</a>
+      </div>
+      </div>
+      <div class="content content-3">
+        <div class="title">Segítség</div>
+        <p>Ha a szolgáltató oldalától "MEGA" nem tud több filmet letölteni, kérjük használja a következőt!</p>
+         <div class="spacing-top">
+          <a href="#" onclick="window.location.href='https://github.com/filmhegy/filmhegy.github.io/releases/download/felirat/Annabelle.2014.HU.Felirat.srt';" style="text-decoration:none" class="hide1">Urban VPN</a>
+         </div>
+         <div class="description-special">
+          <p>Ez egy Ingyenes böngésző bővítmény, ami segítségével egy másik helyről érheti el az oldalt. Ez az IP-címe megváltoztatásával működik.</p>
+         </div>
+      </div>
+      <div class="content content-4">
+        <div class="title">This is a Help content</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim reprehenderit null itaq, odio repellat asperiores vel voluptatem magnam praesentium, eveniet iure ab facere officiis. Quod sequi vel, rem quam provident soluta nihil, eos. Illo oditu omnis cumque praesentium voluptate maxime voluptatibus facilis nulla ipsam quidem mollitia! Veniam, fuga, possimus. Commodi, fugiat aut ut quorioms stu necessitatibus, cumque laborum rem provident tenetur.</p>
+      </div>
+      <div class="content content-5">
+        <div class="title">This is a About content</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur officia sequi aliquam. Voluptatem distinctio nemo culpa veritatis nostrum fugit rem adipisci ea ipsam, non veniam ut aspernatur aperiam assumenda quis esse soluta vitae, placeat quasi. Iste dolorum asperiores hic impedit nesciunt atqu, officia magnam commodi iusto aliquid eaque, libero.</p>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
