@@ -70,7 +70,7 @@ body{
 }
 .wrapper nav{
   position: relative;
-  width: 80%;
+  width: 50%;
   height: 50px;
   display: flex;
   align-items: center;
@@ -94,10 +94,7 @@ body{
   background: rgba(23,162,184,0.3);
 }
 #home:checked ~ nav label.home,
-#blog:checked ~ nav label.blog,
-#code:checked ~ nav label.code,
-#help:checked ~ nav label.help,
-  #about:checked ~ nav label.about{
+#blog:checked ~ nav label.blog{
   color: #fff;
 }
 nav label i{
@@ -106,7 +103,7 @@ nav label i{
 nav .slider{
   position: absolute;
   height: 100%;
-  width: 20%;
+  width: 50%;
   left: 0;
   bottom: 0;
   z-index: 0;
@@ -118,30 +115,14 @@ input[type="radio"]{
   display: none;
 }
 #blog:checked ~ nav .slider{
-  left: 20%;
-}
-#code:checked ~ nav .slider{
-  left: 40%;
-}
-#help:checked ~ nav .slider{
-  left: 60%;
-}
-#about:checked ~ nav .slider{
-  left: 80%;
-}
-#information:checked ~ nav .slider{
-  left: 100%;
+  left: 50%;
 }
 section .content{
   display: none;
   background: #fff;
 }
 #home:checked ~ section .content-1,
-#blog:checked ~ section .content-2,
-#code:checked ~ section .content-3,
-#help:checked ~ section .content-4,
-#about:checked ~ section .content-5,
-#information:checked ~ section .content-6{
+#blog:checked ~ section .content-2{
   display: block;
 }
 .details {
